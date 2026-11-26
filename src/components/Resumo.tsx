@@ -19,7 +19,7 @@ export function Resumo({ transacoes }: Readonly<ResumoProps>) {
   const caixa = "rounded-lg border border-slate-200 p-3";
 
   return (
-    <div className="grid grid-cols-3 gap-3 text-sm">
+    <div className="grid gap-3 sm:grid-cols-3 text-sm">
       <div className={caixa}>
         <p className="text-slate-500">Receitas</p>
         <p className="font-semibold text-emerald-700">

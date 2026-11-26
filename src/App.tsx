@@ -32,19 +32,25 @@ export default function App() {
   return (
     <main className="mx-auto max-w-5xl space-y-6 p-6 text-slate-800">
       <h1 className="text-2xl font-bold">Controle de Gastos</h1>
-      <FormTransacao onAdicionar={adicionar} />
-      <Resumo transacoes={transacoes} />
-      <Filtros
-        categoria={filtroCategoria}
-        tipo={filtroTipo}
-        onCategoria={setFiltroCategoria}
-        onTipo={setFiltroTipo}
-      />
-      <ListaTransacoes
-        transacoes={visiveis}
-        onRemover={remover}
-        onAlternarPaga={alternarPaga}
-      />
+      <div className="grid gap-6 md:grid-cols-[320px_1fr]">
+        <aside className="md:self-start">
+          <FormTransacao onAdicionar={adicionar} />
+        </aside>
+        <section className="space-y-4">
+          <Resumo transacoes={transacoes} />
+          <Filtros
+            categoria={filtroCategoria}
+            tipo={filtroTipo}
+            onCategoria={setFiltroCategoria}
+            onTipo={setFiltroTipo}
+          />
+          <ListaTransacoes
+            transacoes={visiveis}
+            onRemover={remover}
+            onAlternarPaga={alternarPaga}
+          />
+        </section>
+      </div>
     </main>
   );
 }
