@@ -17,3 +17,6 @@ export const CATEGORIAS: Categoria[] = [
   "contas",
   "renda",
 ];
+
+export type FiltroCategoria = Categoria | "todas";
+export type FiltroTipo = TipoTransacao | "todos";
