@@ -1,32 +1,37 @@
-# React + TypeScript + Vite
+# Controle de Gastos Pessoais
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Aplicação para registrar receitas e despesas do mês, com resumo e filtros.
+Atividade 2 da disciplina Tecnologias para Interfaces de Aplicações Web (IFTM).
 
-Currently, two official plugins are available:
+## Tecnologias
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- React 19
+- TypeScript
+- Vite
+- Tailwind CSS v4
 
-## React Compiler
+## Como executar
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+    npm install
+    npm run dev
 
-## Expanding the Oxlint configuration
+## Funcionalidades
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `tsrs` and editing `.oxlintrc.json`:
+- Formulário controlado com validação (descrição com 3 letras ou mais e valor maior que zero)
+- Lista de transações com remoção e marcação de despesa paga
+- Resumo de receitas, despesas e saldo, calculado a partir das transações
+- Filtros por categoria e por tipo
+- Valores formatados em reais com Intl.NumberFormat
+- Layout responsivo
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
-```
+## Componentes
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+- **App**: guarda o estado das transações e dos filtros e define as funções que os alteram.
+- **FormTransacao**: formulário controlado; valida os campos e envia a nova transação ao App.
+- **ListaTransacoes**: exibe as transações recebidas e aciona a remoção e a marcação de paga.
+- **Resumo**: calcula receitas, despesas e saldo a partir das transações, sem estado próprio.
+- **Filtros**: botões de categoria e tipo que alteram os filtros do App.
+
+## Autor
+
+Breno Goya — Análise e Desenvolvimento de Sistemas
