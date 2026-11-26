@@ -10,3 +10,10 @@ export type Transacao = {
   tipo: TipoTransacao;
   paga: boolean;
 };
+
+export const CATEGORIAS: Categoria[] = [
+  "mercado",
+  "transporte",
+  "contas",
+  "renda",
+];
